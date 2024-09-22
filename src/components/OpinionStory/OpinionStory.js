@@ -20,8 +20,18 @@ const OpinionStoryLink = styled.a`
   border-bottom: 1px solid var(--color-gray-300);
   padding-block: 16px;
 
+  &:first-child {
+    padding-top: 0;
+  }
+  
   &:last-child {
     border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  @media ${QUERIES.tabletOnly} {
+    border-bottom: none;
+    padding: 0;
   }
 `;
 
@@ -37,13 +47,11 @@ const Avatar = styled.img`
   object-fit: cover;
   
   float: right;
+  margin: 4px 0 0 4px;
   
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.tabletOnly} {
+    margin: 0;
     float: none;
-  }
-
-  @media ${QUERIES.laptopAndUp} {
-    float: right;
   }
 `;
 
