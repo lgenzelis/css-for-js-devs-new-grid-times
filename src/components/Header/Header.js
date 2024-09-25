@@ -81,6 +81,11 @@ const MainHeader = styled(MaxWidthWrapper)`
   justify-content: center;
   margin-top: 32px;
   margin-bottom: 48px;
+  
+  @media ${QUERIES.laptopAndUp} {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+  }
 `;
 
 const ActionGroupDesktop = styled(ActionGroup)`
@@ -91,10 +96,15 @@ const ActionGroupDesktop = styled(ActionGroup)`
 `;
 
 const ActionGroupDesktopVertical = styled(ActionGroupDesktop)`
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    align-self: flex-end;
+    display: none;
+    @media ${QUERIES.laptopAndUp} {
+      justify-self: end;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      align-self: flex-end;
+    }
 `;
 
 const Link = styled.a`
